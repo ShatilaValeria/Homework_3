@@ -16,4 +16,9 @@
             <class name="collections.MyDLLTest"/>
         </classes>
     </test>
+    <test name="test for queue">
+        <classes>
+            <class name="collections.MyQueueTest"/>
+        </classes>
+    </test>
 </suite>
