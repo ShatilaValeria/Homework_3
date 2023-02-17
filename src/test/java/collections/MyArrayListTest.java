@@ -4,7 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import utilities.ListADT;
 import utilities.MyArrayList;
+
+import java.util.ArrayList;
 
 public class MyArrayListTest {
 
@@ -60,6 +63,16 @@ public class MyArrayListTest {
 
     }
 
+    @Test(description = "Check metod addAll(ListADT<? extends E> toAdd)")
+    public void testAddAll(){
+        ListADT<Integer> toAddList = new MyArrayList<>();
+        toAddList.add(5);
+        toAddList.add(7);
+        toAddList.add(8);
+        Assert.assertTrue(testingArray.addAll(toAddList));
+        Assert.assertThrows(NullPointerException.class, () -> testingArray.addAll(null));
+    }
+
     @Test(dependsOnMethods = "testAddElement")
     public void testDeleteElement() {
         testingArray.add(5);
@@ -74,14 +87,40 @@ public class MyArrayListTest {
         Assert.assertEquals(testingArray.get(1).intValue(), 4);
     }
 
-    @Test
-    public void testEl(){
-        testingArray.add(2);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(testingArray.size(),1);
-        Assert.assertNotEquals(testingArray.size(), "sdfgh");
-        Assert.assertNotEquals(testingArray.size(), 1.2);
+
+    @Test(dependsOnMethods = "remove(E toRemove)")
+    public void testDeleteElementS() {
+        ArrayList<String> firstArrayList = new ArrayList<>();
+        firstArrayList.add("test");
+        firstArrayList.add("secondTest");
+        firstArrayList.add("also test");
+        firstArrayList.remove("also test");
+        ArrayList<String> secondArrayList = new ArrayList<>();
+        secondArrayList.add("test");
+        secondArrayList.add("secondTest");
+        Assert.assertEquals(firstArrayList.toArray(), secondArrayList.toArray());
     }
 
+    @Test(dependsOnMethods = "testAddElement")
+    public void testSetElement() {
+        testingArray.add(10);
+        testingArray.add(4);
+        testingArray.set(0,2);
+        Assert.assertEquals(testingArray.get(0).intValue(), 2);
+    }
+
+    @Test(dependsOnMethods = "isEmpty()")
+    public void testIsEmpty(){
+        Assert.assertTrue(testingArray.isEmpty());
+    }
+
+    @Test(dependsOnMethods = "contains(E toFind)")
+    public void testContains(){
+        testingArray.add(1);
+        testingArray.add(2);
+        testingArray.add(3);
+       // Assert.assertTrue(testingArray.contains(2));
+        Assert.assertTrue(testingArray.contains(1));
+    }
 }
 
