@@ -125,4 +125,12 @@ public class MyStackTest {
         stack2.push(2);
         Assert.assertTrue(stack1.equals(stack2));
     }
+
+    @Test(description = "Checking the method size()", groups = "additionTests")
+    public void testSize(){
+        testingStack.push(1);
+        testingStack.push(2);
+        testingStack.push(3);
+        Assert.assertEquals(testingStack.size(), 3);
+    }
 }

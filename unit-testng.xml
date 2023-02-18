@@ -21,4 +21,9 @@
             <class name="collections.MyQueueTest"/>
         </classes>
     </test>
+    <test name="test for dll node">
+        <classes>
+            <class name="collections.MyDLLNodeTest"/>
+        </classes>
+    </test>
 </suite>
