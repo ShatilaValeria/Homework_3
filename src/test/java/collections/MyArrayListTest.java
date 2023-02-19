@@ -2,6 +2,8 @@ package collections;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Iterator;
@@ -14,8 +16,6 @@ public class MyArrayListTest {
 
     private MyArrayList<Integer> testingArray;
 
-
-
     @BeforeMethod
     public void initArray() {
         testingArray = new MyArrayList<>();
@@ -26,7 +26,6 @@ public class MyArrayListTest {
         Assert.assertEquals(testingArray.size(), 0);
     }
 
-
     @Test(description = "Checking the method size()", groups = "additionTests")
     public void testSize() {
         testingArray.add(1);
@@ -34,7 +33,6 @@ public class MyArrayListTest {
         testingArray.add(3);
         Assert.assertEquals(testingArray.size(), 3);
     }
-
 
     @Test(description = "Checking the method clear()", groups = "additionTests")
     public void testClear() {
@@ -45,7 +43,6 @@ public class MyArrayListTest {
         listADT.clear();
         Assert.assertTrue(listADT.isEmpty());
     }
-
 
     @Test(description = "Checking the method add(int index, E toAdd)" +
             " for the Exception IndexOutOfBoundsException",
@@ -94,7 +91,6 @@ public class MyArrayListTest {
         Assert.assertTrue(testingArray.add(5));
     }
 
-
     @Test(description = "Check method addAll(ListADT<? extends E> toAdd) for the Exception", groups = "additionTests")
     public void testAddAllException() {
         Assert.assertThrows(NullPointerException.class, () -> testingArray.addAll(null));
@@ -108,7 +104,6 @@ public class MyArrayListTest {
         toAddList.add(8);
         Assert.assertTrue(testingArray.addAll(toAddList));
     }
-
 
     @Test(description = "Check method get()", groups = "additionTests")
     public void testGet() {

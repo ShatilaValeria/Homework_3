@@ -44,4 +44,4 @@
      запускаем тест testAddForNullPointerException
 5.3. фактический результат: не получаем никакого Exception
      ожидаемый результат: получить NullPointerException
-5.4 приоритет: P2
+5.4. приоритет: P2
