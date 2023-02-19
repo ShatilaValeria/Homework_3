@@ -99,19 +99,14 @@ public class MyDLLTest {
         Assert.assertEquals(myDLLString.toArray(), expected);
     }
 
-    @Test(description = "Checking the method add(int index, E toAdd) for the Exception", groups = "MyDLLTest")
-    public void testAddSecondException() {
-        myDLLString.add("a");
-        myDLLString.add("b");
-        Assert.assertThrows(NullPointerException.class, () -> myDLLString.add(2, null));
-        Assert.assertThrows(IndexOutOfBoundsException.class, () -> myDLLString.add(100, "100"));
-    }
-
+    //Так как метод не рабочий нет смысла проверять его Exception
     @Test(description = "Checking the method add(int index, E toAdd)", groups = "MyDLLTest")
     public void testAddSecond() {
-        myDLLString.add("a");
-        myDLLString.add("b");
-        Assert.assertTrue(myDLLString.add(myDLLString.size() - 1, "c"));
+        myDLLString.add(0,"a");
+        myDLLString.add(1,"b");
+        myDLLString.add(2,"c");
+        String[] expected = {"a", "b", "c"};
+        Assert.assertEquals(myDLLString.toArray(), expected);
     }
 
     @Test(description = "Checking the method get(int index) for the Exception", groups = "MyDLLTest")

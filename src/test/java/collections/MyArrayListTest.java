@@ -14,6 +14,8 @@ public class MyArrayListTest {
 
     private MyArrayList<Integer> testingArray;
 
+
+
     @BeforeMethod
     public void initArray() {
         testingArray = new MyArrayList<>();
@@ -40,23 +42,30 @@ public class MyArrayListTest {
         listADT.add("One");
         listADT.add("Two");
         listADT.add("Three");
-
         listADT.clear();
-
         Assert.assertTrue(listADT.isEmpty());
     }
 
 
-    @Test(description = "Checking the method add(int index, E toAdd) for the Exception",
+    @Test(description = "Checking the method add(int index, E toAdd)" +
+            " for the Exception IndexOutOfBoundsException",
             groups = "additionTests")
-    public void testAdd() {
+    public void testAddForIndexOutOfBoundsException() {
         testingArray.add(0, 5);
         testingArray.add(1, 7);
         testingArray.add(2, 8);
         Assert.assertThrows(IndexOutOfBoundsException.class, () -> testingArray.add(8, 9));
         Assert.assertThrows(IndexOutOfBoundsException.class, () -> testingArray.add(-2, 2));
-        //Assert.assertThrows(NullPointerException.class, () -> testingArray.add(3, null));
+    }
 
+    @Test(description = "Checking the method add(int index, E toAdd)" +
+            " for the NullPointerException",
+            groups = "additionTests")
+    public void testAddForNullPointerException() {
+        testingArray.add(0, 5);
+        testingArray.add(1, 7);
+        testingArray.add(2, 8);
+        Assert.assertThrows(NullPointerException.class, () -> testingArray.add(3, null));
     }
 
     @Test(description = "Checking the method add(int index, E toAdd)", groups = "additionTests")
