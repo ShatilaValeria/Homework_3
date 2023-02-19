@@ -44,7 +44,7 @@ public class MyStackTest {
 
     @Test(description = "Checking the method pop() for the Exception", groups = "additionTests")
     public void testPopException() {
-        Assert.assertThrows( EmptyStackException.class, () -> testingStack.pop());
+        Assert.assertThrows(EmptyStackException.class, () -> testingStack.pop());
     }
 
     @Test(description = "Checking the method ", groups = "additionTests")
@@ -58,7 +58,7 @@ public class MyStackTest {
 
     @Test(description = "Checking the method peek() for the Exception", groups = "additionTests")
     public void testPeekException() {
-        Assert.assertThrows( EmptyStackException.class, () -> testingStack.peek());
+        Assert.assertThrows(EmptyStackException.class, () -> testingStack.peek());
     }
 
     @Test(description = "Checking the method clear", groups = "additionTests")
@@ -127,7 +127,7 @@ public class MyStackTest {
     }
 
     @Test(description = "Checking the method size()", groups = "additionTests")
-    public void testSize(){
+    public void testSize() {
         testingStack.push(1);
         testingStack.push(2);
         testingStack.push(3);

@@ -73,11 +73,6 @@ public class MyArrayListTest {
     @Test(description = "Checking the method add(E toAdd) for the Exception",
             groups = "additionTests")
     public void testAddSecondException() {
-//        testingArray.add(5);
-//        testingArray.add(7);
-//        testingArray.add(8);
-        //Assert.assertThrows(IndexOutOfBoundsException.class, () -> testingArray.add(9));
-        //Assert.assertThrows(IndexOutOfBoundsException.class, () -> testingArray.add(2));
         Assert.assertThrows(NullPointerException.class, () -> testingArray.add(null));
     }
 
