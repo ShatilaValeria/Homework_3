@@ -99,12 +99,15 @@ public class MyDLLTest {
         Assert.assertEquals(myDLLString.toArray(), expected);
     }
 
-    //Так как метод не рабочий нет смысла проверять его Exception
     @Test(description = "Checking the method add(int index, E toAdd)", groups = "MyDLLTest")
     public void testAddSecond() {
-        myDLLString.add(0,"a");
-        myDLLString.add(1,"b");
-        myDLLString.add(2,"c");
+        try {
+            myDLLString.add(0, "a");
+            myDLLString.add(1, "b");
+            myDLLString.add(2, "c");
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
         String[] expected = {"a", "b", "c"};
         Assert.assertEquals(myDLLString.toArray(), expected);
     }

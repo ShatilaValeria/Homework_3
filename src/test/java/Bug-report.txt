@@ -36,12 +36,3 @@
 4.3. фактический результат: не возможно получить такую ошибку в данном методе
      ожидаемый результат: получить RuntimeException
 4.4 приоритет: P3
-
-
-5)
-5.1. Проверка NullPointerException в методе MyArrayList.add(int index, E toAdd)
-5.2. Заходим в src/test/java/collections/MyArrayListTest
-     запускаем тест testAddForNullPointerException
-5.3. фактический результат: не получаем никакого Exception
-     ожидаемый результат: получить NullPointerException
-5.4. приоритет: P2

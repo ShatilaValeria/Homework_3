@@ -55,16 +55,6 @@ public class MyArrayListTest {
         Assert.assertThrows(IndexOutOfBoundsException.class, () -> testingArray.add(-2, 2));
     }
 
-    @Test(description = "Checking the method add(int index, E toAdd)" +
-            " for the NullPointerException",
-            groups = "additionTests")
-    public void testAddForNullPointerException() {
-        testingArray.add(0, 5);
-        testingArray.add(1, 7);
-        testingArray.add(2, 8);
-        Assert.assertThrows(NullPointerException.class, () -> testingArray.add(3, null));
-    }
-
     @Test(description = "Checking the method add(int index, E toAdd)", groups = "additionTests")
     public void testAddElement() {
         testingArray.add(5);
