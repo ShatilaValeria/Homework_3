@@ -30,7 +30,6 @@ public class XMLTagTest {
 
     @Test(description = "Checking the method setProperties(ListADT<TagProperty> properties) ", groups = "xmlTagTest")
     public void testSetPropertiesALLClass() {
-        XMLTag xmlTag = new XMLTag("Checking");
         XMLTag.TagProperty tagProperty = new XMLTag.TagProperty("Checking", "1");
         Assert.assertEquals(tagProperty.getName(), "Checking");
         Assert.assertEquals(tagProperty.getValue(), "1");
